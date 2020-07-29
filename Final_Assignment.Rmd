@@ -1,0 +1,43 @@
+---
+title: "Reproductible Templates | Final Assignment"
+author: "Fabio Chiletto"
+date: "`r format(Sys.Date(), '%m/%d/%Y')`"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Summary
+
+This is a **Final Assignment** for Reproducible Templates for Analysis and Dissemination Course on Coursera by Emory University. The YAML header, sections, plots and tables was made follow the instructions. The output type is HTML and theme is **cerulean**. Finally, the document in publish to **RPubs** count **Fabao1973**. 
+
+## Task - Bullet List
+  
+1. YAML header
+2. Plots
+3. Tables
+4. Themes
+5. RPubs
+
+## Task - Plot
+A plot of the built-in "pressure" data set
+```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+ggplot(pressure) +
+  aes(x = temperature, y = pressure) +
+  geom_point()
+```
+
+## Task - Table
+A table of the top 6 rows of the built-in "cars" dataset.
+```{r cars, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+dt = head(cars)
+dt %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```
